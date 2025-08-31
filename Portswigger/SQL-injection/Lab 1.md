@@ -16,10 +16,12 @@ Explanation: What you are doing here is closing the category using ' and injecti
 
 The "--" comment out the rest of the line in the database query.
 
-So the original version looks like:
+* So the original version looks like:
+  
 SELECT * FROM products WHERE category = 'Gifts' AND released = 1;
 
-And after injection:
+* And after injection:
+  
 SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1; (The 'AND released = 1 is no longer in the query)
 
 Result: You get every item in the website, released or not.
